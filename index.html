@@ -2,25 +2,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
+    <title>Geolocation Weather App</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 400px;
-      }
-    </style>
+    
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="/vendors/bootstrap_css/css/bootstrap.min.css" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="/vendors/bootstrap_css/css/bootstrap-theme.min.css" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="/vendors/bootstrap_css/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	
+	<script   src="query-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
   </head>
   <body>
     
     <div id="map"></div>
 
-    <script>
+    
+	 <script type="text/javascript" src="/resources/js/app.js"></script>
+    <!-- <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
@@ -63,8 +67,9 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
-    </script>
+    </script> -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK-NwErqsnXF1wnFHYVkxRcPhRxN479oE&callback=initMap">
     </script>
+
   </body>
