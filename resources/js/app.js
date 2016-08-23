@@ -1,6 +1,6 @@
 //Model 
 var database = {
-
+weatherObj: {}
 };
 
 var control = {
@@ -43,6 +43,28 @@ var view = {
         infoWindow.setContent(browserHasGeolocation ?
         					  'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
-	}
+	},
+
+  weatherFetch:function (lat, long, apiKey){
+      $.ajax({
+          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+lat+ "," + long,
+          dataType: "jsonp",
+
+          success: function(response){
+              weatherObj.appTemp = response.currently.apparentTemperature;
+              weatherObj.cldCvr = response.currently.cloudCover;
+              weatherObj.pressure = response.currently.pressure + " mBar";
+              weatherObj.summary = response.currently.summary;
+              weatherObj.windSpeed = response.currently.windSpeed;
+              weatherObj.humidity = response.currently.humidity;
+              weatherObj.apparentTemperatureMax = response.daily.data[0].apparentTemperatureMax;
+              weatherObj.apparentTemperatureMin = response.daily.data[0].apparentTemperatureMin;
+              //console.log(weatherObj);
+              //console.log(response);
+
+          }
+      });
+  }
+  //weatherFetch(lat,long,apiKey);
 }
 view.initMap();
