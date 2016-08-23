@@ -3,6 +3,9 @@ html, body {
     margin: 0;
     padding: 0;
 }
+li {
+	list-style: none;
+}
 #map {
     height: 300px;
 }
