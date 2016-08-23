@@ -45,3 +45,4 @@ var view = {
                               'Error: Your browser doesn\'t support geolocation.');
 	}
 }
+view.initMap();
