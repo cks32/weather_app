@@ -27,15 +27,15 @@ var view = {
             view.userLat = position.coords.latitude;
             view.userLong = position.coords.longitude;
 
-            this.infoWindow.setPosition(pos);
-            this.infoWindow.setContent('Location found.');
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
             map.setCenter(pos);
           }, function() {
-            view.handleLocationError(true, this.infoWindow, map.getCenter());
+            view.handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
-          view.handleLocationError(false, this.infoWindow, map.getCenter());
+          view.handleLocationError(false, infoWindow, map.getCenter());
         }
 	},
 	handleLocationError: function(browserHasGeolocation, infoWindow, pos) {
