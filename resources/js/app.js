@@ -47,7 +47,7 @@ var view = {
 
   weatherFetch:function (apiKey){
       $.ajax({
-          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+userLat+ "," + userLong,
+          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+view.userLat+ "," + view.userLong,
           dataType: "jsonp",
 
           success: function(response){
