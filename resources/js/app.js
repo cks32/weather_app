@@ -45,9 +45,9 @@ var view = {
                               'Error: Your browser doesn\'t support geolocation.');
 	},
 
-  weatherFetch:function (lat, long, apiKey){
+  weatherFetch:function (apiKey){
       $.ajax({
-          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+lat+ "," + long,
+          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+userLat+ "," + userLong,
           dataType: "jsonp",
 
           success: function(response){
