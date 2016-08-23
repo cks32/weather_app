@@ -45,20 +45,20 @@ var view = {
                               'Error: Your browser doesn\'t support geolocation.');
 	},
 
-  weatherFetch:function (lat, long, apiKey){
+  weatherFetch:function (apiKey){
       $.ajax({
-          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+lat+ "," + long,
+          url:"https://api.forecast.io/forecast/"+ apiKey+ "/"+userLat+ "," + userLong,
           dataType: "jsonp",
 
           success: function(response){
-              weatherObj.appTemp = response.currently.apparentTemperature;
-              weatherObj.cldCvr = response.currently.cloudCover;
-              weatherObj.pressure = response.currently.pressure + " mBar";
-              weatherObj.summary = response.currently.summary;
-              weatherObj.windSpeed = response.currently.windSpeed;
-              weatherObj.humidity = response.currently.humidity;
-              weatherObj.apparentTemperatureMax = response.daily.data[0].apparentTemperatureMax;
-              weatherObj.apparentTemperatureMin = response.daily.data[0].apparentTemperatureMin;
+              database.weatherObj.appTemp = response.currently.apparentTemperature;
+              database.weatherObj.cldCvr = response.currently.cloudCover;
+              database.weatherObj.pressure = response.currently.pressure + " mBar";
+              database.weatherObj.summary = response.currently.summary;
+              database.weatherObj.windSpeed = response.currently.windSpeed;
+              database.weatherObj.humidity = response.currently.humidity;
+              database.weatherObj.apparentTemperatureMax = response.daily.data[0].apparentTemperatureMax;
+              database.weatherObj.apparentTemperatureMin = response.daily.data[0].apparentTemperatureMin;
               //console.log(weatherObj);
               //console.log(response);
 
