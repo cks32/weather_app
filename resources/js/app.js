@@ -10,7 +10,7 @@ var control = {
 var view = {
 	userLat: null,
 	userLong: null,
-	initMap: function () {
+	initMap: function() {
 		var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 6
@@ -45,4 +45,3 @@ var view = {
                               'Error: Your browser doesn\'t support geolocation.');
 	}
 }
-window.onload = view.initMap();
