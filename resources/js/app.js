@@ -1,11 +1,11 @@
 //Model 
 var database = {
 
-}
+};
 
 var control = {
 
-}
+};
 
 var view = {
 	userLat: null,
