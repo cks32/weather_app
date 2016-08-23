@@ -90,5 +90,5 @@ var view = {
   // }
 };
 view.weatherFetch(); //asynchronous
-view.marsWeatherFetch(); //asynchronous
+//view.marsWeatherFetch(); //asynchronous
 view.initMap(); //synchronous
