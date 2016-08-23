@@ -21,6 +21,7 @@ var view = {
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             map.setCenter(pos);
+            view.weatherFetch();
           }, function() {
             view.handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -36,6 +37,8 @@ var view = {
                               'Error: Your browser doesn\'t support geolocation.');
 	},
   weatherFetch: function(){
+    console.log(view.userLat);
+    console.log(view.userLong);
     $.ajax({
       url:"https://api.forecast.io/forecast/871ab11d035adf7442dfa8a03179ecda/"+view.userLat+ "," + view.userLong,
       dataType: "jsonp",
@@ -92,4 +95,4 @@ var view = {
 
 //view.marsWeatherFetch(); //asynchronous
 view.initMap(); //synchronous
-view.weatherFetch(); 
+//view.weatherFetch(); 
