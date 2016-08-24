@@ -12,6 +12,9 @@ li {
 	list-style: none;
   background-color: black;
   color: #fff49b;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius:5px
 }
 
 #map {
