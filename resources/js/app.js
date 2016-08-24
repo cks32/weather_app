@@ -91,4 +91,4 @@ var view = {
   // }
 };
 // view.initMap();
-   view.marsWeatherFetch(); 
+   view.weatherFetch(); 
