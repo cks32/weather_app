@@ -4,9 +4,14 @@ html, body {
     padding: 0;
     background-color: #a6ff9b;
 }
+ol, ul {
+  margin-top: 14px;
+}
+
 li {
 	list-style: none;
 }
+
 #map {
     height: 300px;
 }
