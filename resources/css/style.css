@@ -4,6 +4,13 @@ html, body {
     padding: 0;
     background-color: #a6ff9b;
 }
+
+.page-header {
+  margin: 0;
+  background-color: #ff9ba6;
+  padding-top: 40px;
+}
+
 ol, ul {
   margin-top: 14px;
 }
