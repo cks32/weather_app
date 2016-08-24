@@ -10,7 +10,8 @@ ol, ul {
 
 li {
 	list-style: none;
-  background-color: #fff49b;
+  background-color: black;
+  color: #fff49b;
 }
 
 #map {
