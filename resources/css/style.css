@@ -17,7 +17,7 @@ ol, ul {
 li {
 	list-style: none;
   background-color: black;
-  color: #fff49b;
+  color: lightgrey;
   padding: 5px 10px;
   margin-top: 10px;
   border-radius: 5px
