@@ -88,8 +88,8 @@ var view = {
         var atmosphere_opacity, max_temp_fahrenheit, min_temp_fahrenheit, pressure,  season, terrestrial_date, sol;
               
         atmosphere_opacity = response.report.atmo_opacity;
-        max_temp_fahrenheit = response.report.max_temp_fahrenheit;
-        min_temp_fahrenheit = response.report.min_temp_fahrenheit;
+        max_temp_fahrenheit = Math.round(response.report.max_temp_fahrenheit);
+        min_temp_fahrenheit = Math.round(response.report.min_temp_fahrenheit);
         pressure = Math.floor(response.report.pressure / 100) + " mBar";
         season = response.report.season;
         terrestrial_date = new Date(response.report.terrestrial_date);
@@ -99,9 +99,9 @@ var view = {
         $("#mars").append("<li>Sol's Maximum Temperature: " + max_temp_fahrenheit+ "&deg;F</li>");
         $("#mars").append("<li>Sol's Minimum Temperature: " + min_temp_fahrenheit + "&deg;F</li>");
         $("#mars").append("<li>Atmoshperic Pressure: " + pressure + "</li>");
-        $("#mars").append("<li>Current Season on Mars: " + season + "</li>");
-        $("#mars").append("<li>Last Update (Earth Date): " + terrestrial_date + "</li>");
-        $("#mars").append("<li>Last Update in Sol's (based on Curiosity's Sol count) : " + sol + "</li>");   
+        $("#mars").append("<li>Current Mars Season: " + season + "</li>");
+        $("#mars").append("<li>Last Update (Terrestrial Date): " + terrestrial_date + "</li>");
+        $("#mars").append("<li>Last Update in Sol's (Curiosity Rover Sol count) : " + sol + "</li>");   
       }
     });
   }
