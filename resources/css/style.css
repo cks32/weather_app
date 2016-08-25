@@ -9,6 +9,10 @@ html, body {
   padding-top: 40px;
   text-align: center;
 }
+#subheading {
+  font-weight: 200;
+  color: lightgrey;
+}
 
 ol, ul {
   margin-top: 14px;
