@@ -6,6 +6,8 @@ var view = {
           center: {lat: -34.397, lng: 150.644},
           zoom: 10,
           zoomcontrol: false,
+          mapTypeControl: false,
+          streetViewControl: false,
           scalecontrol: true
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
