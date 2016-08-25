@@ -1,1 +1,2 @@
 # weather_app
+Google Maps API based project that utilizes geolocation and reverse geocoding to display local weather conditions using Forecast.io, alongside Mars's weather conditions as reported by NASA's {MAAS} (Mars Atmospheric Aggregation System) API. 
