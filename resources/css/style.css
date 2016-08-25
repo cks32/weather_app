@@ -2,12 +2,11 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #a6ff9b;
 }
 
 .page-header {
   margin:0px;
-  background-color: #f49bff;
+
   padding-top: 40px;
 }
 
