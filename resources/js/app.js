@@ -42,8 +42,6 @@ var view = {
       url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + view.userLat + "," + view.userLong + "&key=AIzaSyBtrwkoXTYmDWwQJfUxM1IdDvZfnNZzGiQ",
       dataType: "json",
       success: function(response) {
-        console.log(response);
-        console.log("Success");
         var city = response.results[0].address_components[3].long_name;
         view.cityAssign(city);
         }
