@@ -37,11 +37,11 @@ var view = {
         					  'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
 	},
-  reverseGeoLocator: function(callback){
+  reverseGeoLocator: function(callback) {
     $.ajax({
       url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + view.userLat + "," + view.userLong + "&key=AIzaSyBtrwkoXTYmDWwQJfUxM1IdDvZfnNZzGiQ",
       dataType: "json",
-      success: function(response){
+      success: function(response) {
         console.log(response);
         console.log("Success");
         var city = response.results[0].address_components[3].long_name;
@@ -55,22 +55,22 @@ var view = {
   },
   weatherFetch: function(){
     $.ajax({
-      url:"https://api.forecast.io/forecast/871ab11d035adf7442dfa8a03179ecda/"+view.userLat+ "," + view.userLong,
+      url:"https://api.forecast.io/forecast/871ab11d035adf7442dfa8a03179ecda/" + view.userLat+ "," + view.userLong,
       dataType: "jsonp",
-      success: function(response){
-        var summary, appTemp, dailyTemperatureMax, dailyTemperatureMin, cldCvr, windSpeed,humidity, pressure;
+      success: function(response) {
+        var summary, currentTemp, dailyTemperatureMax, dailyTemperatureMin, cldCvr, windSpeed,humidity, pressure;
         
-        summary=response.daily.summary;
-        appTemp=response.currently.apparentTemperature;
-        dailyTemperatureMax=response.daily.data[0].apparentTemperatureMax;
-        dailyTemperatureMin=response.daily.data[0].apparentTemperatureMin;
-        cldCvr=Math.floor(response.currently.cloudCover * 100);
-        windSpeed=Math.floor(response.currently.windSpeed);
-        humidity=Math.floor(response.currently.humidity * 100);
-        pressure=Math.floor(response.currently.pressure)+" mBar";
+        summary = response.daily.summary;
+        currentTemp = Math.round(response.currently.apparentTemperature);
+        dailyTemperatureMax = Math.round(response.daily.data[0].apparentTemperatureMax);
+        dailyTemperatureMin = Math.round(response.daily.data[0].apparentTemperatureMin);
+        cldCvr = Math.floor(response.currently.cloudCover * 100);
+        windSpeed = Math.floor(response.currently.windSpeed);
+        humidity = Math.floor(response.currently.humidity * 100);
+        pressure = Math.floor(response.currently.pressure) + " mBar";
               
         $("#earth").append("<li>Local Forecast: " + summary + "</li>");
-        $("#earth").append("<li>'Feel's Like' Temperature: " + appTemp + "&deg;F</li>");
+        $("#earth").append("<li>'Feel's Like' Temperature: " + currentTemp + "&deg;F</li>");
         $("#earth").append("<li>Today's Temperature Max: " + dailyTemperatureMax + "&deg;F</li>");
         $("#earth").append("<li>Today's Temperature Min: " + dailyTemperatureMin + "&deg;F</li>");
         $("#earth").append("<li>Cloud Cover: " + cldCvr + "%</li>");
@@ -84,7 +84,7 @@ var view = {
     $.ajax({
       url:"http://marsweather.ingenology.com/v1/latest/?format=jsonp",
       dataType: "jsonp",
-      success: function(response){
+      success: function(response) {
         var atmosphere_opacity, max_temp_fahrenheit, min_temp_fahrenheit, pressure,  season, terrestrial_date, sol;
               
         atmosphere_opacity = response.report.atmo_opacity;
