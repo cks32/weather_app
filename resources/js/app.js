@@ -7,8 +7,7 @@ var view = {
           zoom: 10,
           zoomcontrol: false,
           mapTypeControl: false,
-          streetViewControl: false,
-          scalecontrol: true
+          streetViewControl: false
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
