@@ -7,18 +7,16 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="/weather_app/resources/css/style.css">
-   	<script src="/weather_app/vendors/jquery/jquery-3.1.0.js"></script>
+    <script src="/weather_app/vendors/jquery/jquery-3.1.0.js"></script>
     <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="/weather_app/vendors/bootstrap_css/css/bootstrap.min.css" >
+	  <link rel="stylesheet" href="/weather_app/vendors/bootstrap_css/css/bootstrap.min.css" >
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="/weather_app/vendors/bootstrap_css/css/bootstrap-theme.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script rel = "stylesheet" src="/weather_app//vendors/bootstrap_css/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" href="/weather_app/resources/css/style.css">
-
+  <link rel="stylesheet" href="/weather_app/resources/css/style.css">
   </head>
   <body>
     <div class="page-header">
@@ -28,19 +26,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          <ul id="earth"><h1>Current Local Weather Conditions</h1></ul>
+          <ul id="earth">
+            <p id="cityTitle"></p>
+          </ul>
         </div>
         <div class="col-md-6">
-          <ul id="mars"><h1>Mars Weather Conditions</h1></ul>
+          <ul id="mars">
+            <p id="marsTitle"></p>
+          </ul>
         </div>
       </div>
     </div>
-
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK-NwErqsnXF1wnFHYVkxRcPhRxN479oE">
     </script>
-
-
     <script type="text/javascript" src="/weather_app/resources/js/app.js"></script>
   </body>
 </html>

@@ -22,6 +22,7 @@ var view = {
             infoWindow.setContent('Location found.');
             map.setCenter(pos);
             view.weatherFetch();
+            view.reverseGeoLocator();
           }, function() {
             view.handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -36,6 +37,22 @@ var view = {
         					  'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
 	},
+  reverseGeoLocator: function(callback){
+    $.ajax({
+      url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + view.userLat + "," + view.userLong + "&key=AIzaSyBtrwkoXTYmDWwQJfUxM1IdDvZfnNZzGiQ",
+      dataType: "json",
+      success: function(response){
+        console.log(response);
+        console.log("Success");
+        var city = response.results[0].address_components[3].long_name;
+        view.cityAssign(city);
+        }
+    });
+  },
+  cityAssign: function(city) {
+      userCity = city;
+      $("#cityTitle").text(userCity + "\'s Current Weather Conditions");
+  },
   weatherFetch: function(){
     $.ajax({
       url:"https://api.forecast.io/forecast/871ab11d035adf7442dfa8a03179ecda/"+view.userLat+ "," + view.userLong,
@@ -84,12 +101,10 @@ var view = {
         $("#mars").append("<li>Atmoshperic Pressure: " + pressure + "</li>");
         $("#mars").append("<li>Current Season on Mars: " + season + "</li>");
         $("#mars").append("<li>Last Update (Earth Date): " + terrestrial_date + "</li>");
-        $("#mars").append("<li>Last Update in Sol's (based on Curiosity's Sol count) : " + sol + "</li>"); 
-            
+        $("#mars").append("<li>Last Update in Sol's (based on Curiosity's Sol count) : " + sol + "</li>");   
       }
     });
   }
 };
 view.initMap();
-// view.weatherFetch(); 
 view.marsWeatherFetch();

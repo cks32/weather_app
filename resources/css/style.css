@@ -27,3 +27,9 @@ li {
 #map {
     height: 300px;
 }
+#cityTitle {
+  font-weight: bold;
+}
+#marsTitle {
+  font-weight: bold;
+}
